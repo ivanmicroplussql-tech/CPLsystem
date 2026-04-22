@@ -9,48 +9,52 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f5f7fa;color:#333;scroll-behavior:smooth}
 
-body{
-    background:#f4f6f9;
-    color:#333;
-}
-
-/* HEADER */
-header{
-    background:linear-gradient(135deg,#0d2b45,#1e4e79);
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    background:#0d2b45;
+    display:flex;
+    justify-content:space-between;
+    padding:15px 40px;
     color:white;
+    z-index:1000;
+}
+nav ul{display:flex;gap:20px;list-style:none;}
+nav a{color:white;text-decoration:none;}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c');
+    background-size:cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    padding:80px 20px;
+    color:white;
 }
+.hero h1{font-size:50px;}
+.hero p{margin-top:10px;font-size:18px;}
 
-header h1{
-    font-size:48px;
-}
-
-header p{
-    margin-top:10px;
-    font-size:18px;
-}
-
-/* BOTON */
 .btn{
-    display:inline-block;
     margin-top:20px;
     padding:12px 25px;
     background:#28a745;
     color:white;
     border-radius:30px;
     text-decoration:none;
-    transition:0.3s;
+    display:inline-block;
+    transition:.3s;
 }
+.btn:hover{background:#218838}
 
-.btn:hover{
-    background:#218838;
-}
-
-/* SECCION */
+/* SECTION */
 .section{
-    padding:60px 20px;
+    padding:80px 20px;
     text-align:center;
 }
 
@@ -61,34 +65,16 @@ header p{
     justify-content:center;
     gap:25px;
 }
-
 .card{
     background:white;
     width:300px;
-    border-radius:15px;
     padding:25px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-    transition:0.3s;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    transition:.3s;
 }
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.price{
-    font-size:40px;
-    color:#28a745;
-    margin:15px 0;
-}
-
-.features{
-    text-align:left;
-    margin:20px 0;
-}
-
-.features li{
-    margin:10px 0;
-}
+.card:hover{transform:translateY(-10px)}
+.price{font-size:35px;color:#28a745}
 
 /* BENEFICIOS */
 .benefits{
@@ -97,16 +83,29 @@ header p{
     justify-content:center;
     gap:20px;
 }
-
 .benefit{
     width:250px;
 }
 
-/* CONTACTO */
-.contact{
+/* FORMULARIO */
+form{
+    max-width:400px;
+    margin:auto;
+}
+input,textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+/* FOOTER */
+footer{
     background:#0d2b45;
     color:white;
-    padding:40px;
+    padding:30px;
+    text-align:center;
 }
 
 /* WHATSAPP */
@@ -115,91 +114,100 @@ header p{
     bottom:20px;
     right:20px;
     background:#25D366;
-    color:white;
-    padding:15px 18px;
+    padding:15px;
     border-radius:50%;
-    font-size:24px;
+    color:white;
     text-decoration:none;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    font-size:20px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>CPL SYSTEM</h1>
-    <p>Todo tu negocio en un solo sistema</p>
-    <a href="https://wa.me/593984058700" class="btn">Solicitar Demo</a>
-</header>
+<nav>
+<h2>CPL System</h2>
+<ul>
+<li><a href="#planes">Planes</a></li>
+<li><a href="#beneficios">Beneficios</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</nav>
 
-<section class="section">
-    <h2>¿Qué ofrecemos?</h2>
-    <p>Sistema contable completo para pequeñas y medianas empresas</p>
+<section class="hero">
+<div>
+<h1>Automatiza tu negocio hoy</h1>
+<p>Ventas, contabilidad y ATS en un solo sistema</p>
+<a href="https://wa.me/593984058700" class="btn">Compra tu plan</a>
+</div>
 </section>
 
-<section class="section">
-    <h2>Planes</h2>
+<section id="planes" class="section">
+<h2>Planes</h2>
 
-    <div class="plans">
+<div class="plans">
+<div class="card">
+<h3>Básico</h3>
+<div class="price">$15</div>
+<p>Compras, ventas, inventario y bancos</p>
+</div>
 
-        <div class="card">
-            <h3>Plan Básico</h3>
-            <div class="price">$15</div>
-            <ul class="features">
-                <li>✔ Compras</li>
-                <li>✔ Ventas</li>
-                <li>✔ Inventario</li>
-                <li>✔ Bancos</li>
-            </ul>
-            <a href="https://wa.me/593984058700" class="btn">Contratar</a>
-        </div>
+<div class="card">
+<h3>Intermedio</h3>
+<div class="price">$30</div>
+<p>Contabilidad completa + ATS</p>
+</div>
 
-        <div class="card">
-            <h3>Plan Intermedio</h3>
-            <div class="price">$30</div>
-            <ul class="features">
-                <li>✔ Contabilidad completa</li>
-                <li>✔ ATS</li>
-                <li>✔ Reportes</li>
-                <li>✔ Soporte</li>
-            </ul>
-            <a href="https://wa.me/593984058700" class="btn">Contratar</a>
-        </div>
-
-        <div class="card">
-            <h3>Plan Avanzado</h3>
-            <div class="price">$55</div>
-            <ul class="features">
-                <li>✔ Nómina</li>
-                <li>✔ Producción</li>
-                <li>✔ Reportes avanzados</li>
-                <li>✔ Soporte prioritario</li>
-            </ul>
-            <a href="https://wa.me/593984058700" class="btn">Contratar</a>
-        </div>
-
-    </div>
+<div class="card">
+<h3>Avanzado</h3>
+<div class="price">$55</div>
+<p>Nómina + Producción</p>
+</div>
+</div>
 </section>
 
-<section class="section">
-    <h2>¿Por qué elegirnos?</h2>
+<section id="beneficios" class="section">
+<h2>¿Por qué elegirnos?</h2>
 
-    <div class="benefits">
-        <div class="benefit">✔ Cumple con el SRI (ATS)</div>
-        <div class="benefit">✔ Sistema fácil de usar</div>
-        <div class="benefit">✔ Soporte personalizado</div>
-        <div class="benefit">✔ Acceso desde cualquier lugar</div>
-    </div>
+<div class="benefits">
+<div class="benefit">✔ Cumple con el SRI</div>
+<div class="benefit">✔ Control total</div>
+<div class="benefit">✔ Fácil de usar</div>
+<div class="benefit">✔ Soporte personalizado</div>
+</div>
 </section>
 
-<section class="contact">
-    <h2>Contáctanos</h2>
-    <p>📞 0984058700</p>
-    <p>📍 Ambato - Ecuador</p>
+<section id="contacto" class="section">
+<h2>Contáctanos</h2>
+
+<form onsubmit="enviarWhatsApp(event)">
+<input type="text" id="nombre" placeholder="Nombre" required>
+<input type="text" id="empresa" placeholder="Empresa">
+<textarea id="mensaje" placeholder="Quiero información"></textarea>
+<button class="btn">Enviar</button>
+</form>
+
+<p>📞 0984058700</p>
+<p>📍 Ambato - Ecuador</p>
 </section>
+
+<footer>
+<p>© 2026 CPL System</p>
+</footer>
 
 <a href="https://wa.me/593984058700" class="whatsapp">💬</a>
+
+<script>
+function enviarWhatsApp(e){
+e.preventDefault();
+let nombre=document.getElementById("nombre").value;
+let empresa=document.getElementById("empresa").value;
+let mensaje=document.getElementById("mensaje").value;
+
+let texto=`Hola, soy ${nombre} de ${empresa}. ${mensaje}`;
+window.open(`https://wa.me/593984058700?text=${encodeURIComponent(texto)}`);
+}
+</script>
 
 </body>
 </html>
